@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/banner.svg" width="100%" alt="Patterson Design System — Patterson Companies">
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/brand/patterson-logo-white.svg">
   <img src="assets/brand/patterson-logo-navy.svg" alt="Patterson Companies" width="260">
@@ -33,10 +35,12 @@ tokens, components, guidelines, integrations, and templates.
 ## Table of contents
 
 - [What this is](#what-this-is)
+- [Screenshots](#screenshots)
 - [Provenance](#provenance)
 - [Layout](#layout)
 - [Exclusions](#exclusions)
 - [Substitutions made on import](#substitutions-made-on-import)
+- [Brand asset re-encode (2026-08-12)](#brand-asset-re-encode-2026-08-12)
 - [Canonicity](#canonicity)
 
 ## What this is
@@ -46,6 +50,14 @@ library with usage prompts, brand guideline reference cards, framework integrati
 UnoCSS, shadcn, theme-ui), and page/deck/site templates. See [DESIGN.md](DESIGN.md) for the full
 system rationale, [SKILL.md](SKILL.md) for how it's meant to be invoked as a Claude skill, and
 [CLAUDE.md](CLAUDE.md) for agent-facing conventions.
+
+## Screenshots
+
+| | |
+|---|---|
+| <img src="docs/screenshots/site-home.webp" width="420" alt="the design system's own documentation/demo site, home view"><br>**Site home** — the design system's own documentation/demo site. | <img src="docs/screenshots/kitchen-sink.webp" width="420" alt="kitchen-sink page showing every component and token in one view"><br>**Kitchen sink** — every component and token rendered in one page. |
+| <img src="docs/screenshots/brand-palette-card.webp" width="420" alt="the brand-guide color palette reference card"><br>**Brand palette card** — the [`guidelines/brand-palette.card.html`](guidelines/brand-palette.card.html) reference. | <img src="docs/screenshots/template-deck.webp" width="420" alt="the deck template's cover slide"><br>**Deck template** — the [`templates/deck/`](templates/deck/) scaffold. |
+| <img src="docs/screenshots/template-storefront.webp" width="420" alt="the storefront template's home screen"><br>**Storefront template** — the [`templates/storefront/`](templates/storefront/) scaffold. | |
 
 ## Provenance
 
@@ -90,14 +102,38 @@ Three brand images were swapped for optimized versions already produced against 
 source files in PR #9 of `patterson-design-plugins` (verified by matching aspect ratio and
 content before substitution — dimensions changed, the images did not):
 
-| File | Before | After |
+| File | Before | After (PR #9, at import) |
 |---|---|---|
 | `assets/brand/photo-markets.webp` | 2880×980, 5.9 MB | 1600×544, 465 KB |
 | `assets/brand/value-prop.webp` | 2754×1000, 2.6 MB | 1600×581, 240 KB |
 | `assets/brand/wave-bg-navy.webp` | 3840×2160, 357 KB | 1920×1080, 6.7 KB |
 
+> [!NOTE]
+> These PR #9 figures are historical — see
+> [Brand asset re-encode (2026-08-12)](#brand-asset-re-encode-2026-08-12) below for the current
+> files. PR #9's variants were over-crushed for this project's full-width usage; they have since
+> been replaced.
+
 No other PNG in the committed tree exceeds 500 KB (`assets/brand/deck/bg-cover-panel.png` is the
 next-largest at 484 KB and was left as-is).
+
+## Brand asset re-encode (2026-08-12)
+
+The three PR #9 substitutions above, plus `color-palette.webp` (previously a `.png`), were
+re-encoded straight from the claude.ai/design export originals — not from the already-lossy PR
+#9 files — at up to 2560px wide for crisp full-width display:
+
+| File | Before (PR #9 / original PNG) | After (2560px re-encode from export original) |
+|---|---|---|
+| `assets/brand/wave-bg-navy.webp` | 1920×1080, 6.7 KB | 2560×1440, 18 KB |
+| `assets/brand/photo-markets.webp` | 1600×544, 465 KB | 2560×871, 284 KB |
+| `assets/brand/value-prop.webp` | 1600×581, 240 KB | 2560×930, 181 KB |
+| `assets/brand/color-palette.webp` | 973×1202 PNG, 239 KB | 3892×4808, 610 KB |
+
+`color-palette.webp` is the deliberate exception to the "cap at 2560px wide" rule: it's a flat-
+color palette reference card, not a photo, so it was Lanczos-upscaled 2x from the export
+original instead of downscaled, to stay crisp when displayed at full width. See
+[REFERENCES.md](REFERENCES.md) for the full provenance note.
 
 ## Canonicity
 
