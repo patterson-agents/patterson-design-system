@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs — Patterson Design System</title>
+<link rel="icon" href="../assets/brand/favicon-32x32.png">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="site.css">
+<style>
+.shell{max-width:1240px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:230px 1fr;gap:56px;align-items:start}
+.side{position:sticky;top:72px;padding:48px 0;max-height:calc(100vh - 72px);overflow-y:auto}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side a{font-size:14px;line-height:1.5;color:var(--pat-gray);padding:6px 12px;border-left:2px solid var(--border-subtle);margin-left:-2px}
+.side a:hover{color:var(--pat-navy);border-left-color:var(--pat-navy-40)}
+.side a.on{color:var(--pat-navy);font-weight:600;border-left-color:var(--pat-sky)}
+.side p{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin:22px 0 8px 12px}
+.side p:first-child{margin-top:0}
+.doc{padding:48px 0 96px;max-width:760px;min-width:0}
+.doc section{scroll-margin-top:96px;margin-bottom:64px}
+.doc h2{font-size:30px;line-height:1.15;font-weight:800;margin:0 0 14px}
+.doc h3{font-size:19px;line-height:1.3;font-weight:600;margin:34px 0 10px}
+.doc p{font-size:16px;line-height:1.7;color:var(--pat-gray);margin:0 0 14px}
+.doc ul{margin:0 0 16px;padding-left:20px;color:var(--pat-gray);font-size:16px;line-height:1.7}
+.doc li{margin-bottom:7px}
+.doc li::marker{color:var(--pat-sky)}
+.doc pre{margin:0 0 18px}
+.doc .tbl{margin-bottom:18px}
+.doc hr{border:0;border-top:1px solid var(--border-subtle);margin:0 0 48px}
+.note{border-left:3px solid var(--pat-sky);background:var(--pat-sky-10);padding:14px 18px;margin:0 0 18px;font-size:15px;line-height:1.6;color:var(--pat-gray)}
+.note b{color:var(--pat-navy)}
+.warn{border-left-color:var(--pat-warning);background:var(--pat-warning-bg)}
+.warn b{color:#7a5000}
+.dhead{padding:56px 0 40px;border-bottom:1px solid var(--border-subtle);margin-bottom:0}
+.swrow{display:flex;gap:0;border-radius:var(--radius-btn-elevated);overflow:hidden;margin-bottom:18px}
+.swrow div{flex:1;height:64px;display:flex;align-items:flex-end;padding:8px;font-family:var(--font-mono);font-size:10px}
+@media(max-width:960px){.shell{grid-template-columns:1fr;gap:0;padding:0 20px}.side{position:static;max-height:none;padding:28px 0 0;border-bottom:1px solid var(--border-subtle)}.side nav{flex-direction:row;flex-wrap:wrap;gap:6px}.side a{border-left:0;border:1px solid var(--border-subtle);border-radius:999px;padding:6px 14px}.side p{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-l">
+      <a class="nav-logo" href="index.html"><img src="../assets/brand/patterson-logo-navy.svg" alt="Patterson"><span>Design System</span></a>
+      <div class="nav-links"><a href="docs.html" aria-current="page">Docs</a><a href="demos.html">Demos</a><a href="kitchen-sink.html">Kitchen sink</a><a href="../DESIGN.md">Spec</a></div>
+    </div>
+    <div class="nav-r"><span class="nav-ver">v1.0</span><a class="btn btn-sm btn-primary" href="#start">Get started</a></div>
+  </div>
+</nav>
+
+<div class="wrap dhead">
+  <div class="eyebrow">Documentation</div>
+  <h1 class="h-1" style="margin-top:8px">Build on the Patterson brand.</h1>
+  <p class="lead" style="margin-top:14px;max-width:640px">Link one stylesheet, read components off one global. No build step, no package manager, no framework requirement.</p>
+</div>
+
+<div class="shell">
+  <aside class="side">
+    <nav id="toc">
+      <p>Start</p>
+      <a href="#start">Getting started</a>
+      <a href="#install">Install</a>
+      <a href="#anatomy">What's in the box</a>
+      <p>Foundations</p>
+      <a href="#tokens">Tokens</a>
+      <a href="#colour">Colour</a>
+      <a href="#type">Type</a>
+      <a href="#shape">Shape &amp; depth</a>
+      <a href="#icons">Icons</a>
+      <p>Building</p>
+      <a href="#components">Components</a>
+      <a href="#templates">Templates</a>
+      <a href="#integrations">Framework adapters</a>
+      <p>Reference</p>
+      <a href="#rules">Brand rules</a>
+      <a href="#gotchas">Gotchas</a>
+      <a href="#contrib">Contributing</a>
+    </nav>
+  </aside>
+
+  <main class="doc">
+
+    <section id="start">
+      <h2>Getting started</h2>
+      <p>The system ships as plain CSS custom properties plus a compiled React bundle. Everything below runs in a browser as-is — open an HTML file and it works.</p>
+      <p>If you only need the brand — colours, type, spacing, the icon font — link <code>styles.css</code> and stop there. If you want the React components too, add the bundle.</p>
+      <div class="note"><b>Read <a href="../DESIGN.md">DESIGN.md</a> before you build.</b> It is the verified spec: every rule tagged <span class="tag tag-v">V</span> production-verified, <span class="tag tag-s">S</span> system convention, or <span class="tag tag-c">C</span> corrected. Several intuitive-seeming rules are false — see <a href="#gotchas">Gotchas</a>.</div>
+    </section>
+
+    <hr>
+
+    <section id="install">
+      <h2>Install</h2>
+      <p>Two tags. Paths are relative to your page.</p>
+<pre><code><span class="c">&lt;!-- tokens + fonts + the official icon font --&gt;</span>
+&lt;<span class="k">link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"styles.css"</span>&gt;
+
+<span class="c">&lt;!-- React components (optional) --&gt;</span>
+&lt;<span class="k">script</span> src=<span class="s">"_ds_bundle.js"</span>&gt;&lt;/<span class="k">script</span>&gt;</code></pre>
+      <p>Components come off one global:</p>
+<pre><code><span class="k">const</span> { Button, Card, Stat, Icon, Input, Alert, Tabs } =
+  window.PattersonCompaniesDesignSystem_3534f9;</code></pre>
+      <p>The bundle expects React 18 already on the page. For a prototype, load React, ReactDOM and Babel first, then the bundle, then your script.</p>
+      <div class="note">Inside a template folder, <code>ds-base.js</code> does all of this for you — it resolves the stylesheet and bundle from one <code>base</code> constant. Copying a template out means editing that one line.</div>
+    </section>
+
+    <hr>
+
+    <section id="anatomy">
+      <h2>What's in the box</h2>
+      <table class="tbl">
+        <tr><th>Path</th><th>What it is</th></tr>
+        <tr><td><a href="../styles.css">styles.css</a></td><td>The single entry point. Imports every token file — link this, nothing else.</td></tr>
+        <tr><td><a href="../tokens">tokens/</a></td><td>fonts · icons · colors · typography · spacing · effects · base</td></tr>
+        <tr><td><a href="../components">components/</a></td><td>13 React components in core / forms / feedback</td></tr>
+        <tr><td><a href="../templates">templates/</a></td><td>11 starting points — surfaces, decks, app shells</td></tr>
+        <tr><td><a href="../guidelines">guidelines/</a></td><td>Specimen cards for every foundation</td></tr>
+        <tr><td><a href="../integrations">integrations/</a></td><td>Tailwind (v3 + v4), UnoCSS, shadcn/ui, Theme UI</td></tr>
+        <tr><td><a href="../theme.json">theme.json</a></td><td>Machine-readable theme; the adapters are generated from it</td></tr>
+        <tr><td><a href="../assets">assets/</a></td><td>Lockups, favicons, photography, fonts, the icon font</td></tr>
+      </table>
+    </section>
+
+    <hr>
+
+    <section id="tokens">
+      <h2>Tokens</h2>
+      <p>211 custom properties. Every one is available the moment <code>styles.css</code> is linked — there is no theme provider and no JavaScript involved.</p>
+      <h3>Two scales live side by side</h3>
+      <p>Type and spacing each carry <b>production-verified</b> values alongside this system's own conventions, because the two genuinely differ. Production values describe the live Patterson sites; system values are deliberate additions that make the system more consistent and more accessible.</p>
+      <ul>
+        <li><b>Production</b> — the <code>--pt-*</code> type scale, <code>--radius-btn</code> (5px), <code>--radius-field</code> (2px), <code>--download-shadow</code>, <code>--transition-prod</code>.</li>
+        <li><b>System</b> — the fluid <code>--fs-*</code> scale, <code>--radius-pill</code>, navy-tinted <code>--shadow-*</code>, <code>--ring-focus</code>, the tracking tokens, the 44px control floor.</li>
+      </ul>
+      <p>Add <code>class="pat-production"</code> to any subtree to render the exact live scale instead of the system one.</p>
+      <h3>Production name aliases</h3>
+      <p>The live theme's own property names are aliased in, so markup lifted straight from production works unchanged:</p>
+<pre><code>--color-primary-dark-blue   <span class="c">→ --pat-navy</span>
+--color-primary-light-blue  <span class="c">→ --pat-sky</span>
+--color-primary-cool-grey   <span class="c">→ --pat-gray</span>
+--primary-hover             <span class="c">→ #315D83</span></code></pre>
+    </section>
+
+    <hr>
+
+    <section id="colour">
+      <h2>Colour</h2>
+      <div class="swrow">
+        <div style="background:#003767;color:#fff">#003767</div>
+        <div style="background:#00A8E1;color:#fff">#00A8E1</div>
+        <div style="background:#147EC2;color:#fff">#147EC2</div>
+        <div style="background:#6DCFF6;color:#003767">#6DCFF6</div>
+        <div style="background:#58585B;color:#fff">#58585B</div>
+        <div style="background:#ECECEC;color:#58585B">#ECECEC</div>
+      </div>
+      <p><b>Navy</b> <code>#003767</code> carries headings, chrome and emphasis surfaces. <b>Sky</b> <code>#00A8E1</code> is the accent — focus rings, statistics, active underlines, card stripes. White does most of the work; navy bands punctuate.</p>
+      <h3>Rules that matter</h3>
+      <ul>
+        <li><b>Every heading level is navy.</b> Production sets <code>color: var(--color-primary-dark-blue)</code> on h1 through h4, the eyebrow and the caption alike. Headings are never grey or near-black.</li>
+        <li><b>The tertiary set is for data only.</b> Green <code>#7BC24D</code>, teal <code>#00817D</code> and purple <code>#522E91</code> belong in charts and infographics — never as page chrome.</li>
+        <li><b>Sky is accent-scale, navy is surface-scale.</b> Don't fill a large band with sky.</li>
+        <li><b><code>#AFA593</code> is a warm taupe</b> and it is deliberate — the brand's one non-cool grey, used for input borders. Don't "correct" it.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="type">
+      <h2>Type</h2>
+      <p>One family does everything: <b>Proxima Nova</b>, with Figtree as the loaded open fallback and Arial as the PowerPoint-safe substitute. There is no display/body split — hierarchy comes from size and weight.</p>
+      <div class="note warn"><b>Only 400 and 700 are real.</b> The licensed Typekit kit serves exactly four faces — 400, 400 italic, 700, 700 italic. The production theme still asks for <code>800</code> on h1/h2, <code>600</code> on buttons and <code>500</code> on eyebrows, so the live sites render browser-synthesized faux bold at those weights. Treat 700 as the real bold ceiling.</div>
+      <h3>The production scale</h3>
+      <table class="tbl">
+        <tr><th>Token</th><th>Mobile</th><th>Desktop</th><th>Weight</th></tr>
+        <tr><td>h1</td><td>2.75rem / 3rem</td><td>4rem / 4.25rem</td><td>800</td></tr>
+        <tr><td>h2</td><td>2.25rem / 2.5rem</td><td>2.75rem / 3rem</td><td>800</td></tr>
+        <tr><td>h3</td><td>1.5rem / 1.75rem</td><td>2.25rem / 2.5rem</td><td><b>400</b></td></tr>
+        <tr><td>h4</td><td>1.5rem / 1.75rem</td><td>—</td><td><b>400</b></td></tr>
+        <tr><td>body</td><td>1.125rem / 1.5rem</td><td>—</td><td>400</td></tr>
+        <tr><td>eyebrow</td><td>0.875rem / 1.375rem</td><td>—</td><td>500</td></tr>
+        <tr><td>button</td><td>0.9375rem / 1.25rem</td><td>—</td><td>600</td></tr>
+      </table>
+      <p>Note the hard drop: <b>800 at h1 and h2, then 400 from h3 down</b>. Hierarchy is a size step plus a weight step, not a continuous bold ramp.</p>
+      <h3>Two things people add that don't belong</h3>
+      <ul>
+        <li><b>Letter-spacing.</b> Production declares none anywhere — not negative on display sizes, not positive on uppercase labels.</li>
+        <li><b>Uppercase sky eyebrows.</b> The production eyebrow is <b>navy, 14px, weight 500, sentence case</b>. "Trusted expertise" and "Unrivaled support" appear verbatim as section eyebrows on the live sites. <code>.pat-eyebrow--accent</code> keeps the uppercase-sky treatment as a system option.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="shape">
+      <h2>Shape &amp; depth</h2>
+      <p>Production is restrained. Radii are small, shadows are soft and low-alpha, and there are no gradients anywhere in the stylesheet.</p>
+      <table class="tbl">
+        <tr><th>Token</th><th>Value</th><th>Use</th></tr>
+        <tr><td>--radius-field</td><td>2px</td><td>Input, select, textarea</td></tr>
+        <tr><td>--radius-btn</td><td>5px</td><td>Buttons</td></tr>
+        <tr><td>--radius-btn-elevated</td><td>6px</td><td>Download / external buttons</td></tr>
+        <tr><td>--radius-lg</td><td>10px</td><td>Cards — the signature container radius</td></tr>
+        <tr><td>--radius-pill</td><td>999px</td><td><b>System convention only</b> — no pill exists in production</td></tr>
+      </table>
+      <p>Elevation runs five navy-tinted steps, <code>--shadow-xs</code> through <code>--shadow-xl</code>. Cards rest at <code>--shadow-sm</code> and lift 3px to <code>--shadow-lg</code> when interactive. Focus is a 3px sky ring, <code>--ring-focus</code>, and it is never removed.</p>
+      <p>Motion is 120–320ms on colour, border-colour, transform and height. No bounces, no springs, no parallax, no infinite loops.</p>
+    </section>
+
+    <hr>
+
+    <section id="icons">
+      <h2>Icons</h2>
+      <p>The official Patterson icon font ships with the system — <b>93 glyphs</b> lifted from the production storefront pattern library, at private-use codepoints from <code>U+E900</code>. It replaces Lucide and every other third-party set.</p>
+<pre><code><span class="c">&lt;!-- plain HTML --&gt;</span>
+&lt;<span class="k">i</span> class=<span class="s">"pat-i pat-i-cart"</span> aria-hidden=<span class="s">"true"</span>&gt;&lt;/<span class="k">i</span>&gt;
+
+<span class="c">// React</span>
+&lt;Icon name=<span class="s">"chevron-right"</span> size=<span class="s">"sm"</span> /&gt;</code></pre>
+      <p>Because it is a font, glyphs inherit <code>color</code> and scale with <code>font-size</code> — there is no stroke to set. Production renders inline glyphs at 14px (<code>--icon-size-sm</code>).</p>
+      <p>The set covers navigation, commerce, documents, account and social, plus specifics no generic library has: <code>pedigree</code>, <code>prescription</code>, <code>formulary-list</code>, <code>hazmat</code>, <code>shiponice</code>, <code>previouslypurchased</code>.</p>
+      <div class="note">Always pair a glyph with a text label or an <code>aria-label</code> — private-use codepoints read as nothing to a screen reader. <a href="../guidelines/brand-icons.card.html">Browse all 93 →</a></div>
+      <h3>Spot illustrations are a separate tier</h3>
+      <p>The navy-and-sky two-tone line illustrations used to head a capability card are not in the font. They live in <a href="../assets/brand">assets/brand</a> at 64–120px with heavy rounded strokes.</p>
+    </section>
+
+    <hr>
+
+    <section id="components">
+      <h2>Components</h2>
+      <p>Thirteen React components on one namespace. Each ships typed props, a specimen card and usage notes for agents.</p>
+      <table class="tbl">
+        <tr><th>Group</th><th>Components</th></tr>
+        <tr><td><a href="../components/core">core</a></td><td>Button · IconButton · Icon · Badge · Stat · Card</td></tr>
+        <tr><td><a href="../components/forms">forms</a></td><td>Input · Select · Checkbox · Radio · Switch</td></tr>
+        <tr><td><a href="../components/feedback">feedback</a></td><td>Alert · Tabs</td></tr>
+      </table>
+      <h3>The interaction contract</h3>
+      <ul>
+        <li><b>Buttons</b> are 5px with 15px/30px padding. <code>primary</code> is navy hovering to a <b>lighter navy</b> <code>#315D83</code>. <code>secondary</code> is a <b>filled light blue</b> <code>#6DCFF6</code> with a navy label. Both are production-verified; <code>sky</code>, <code>outline</code>, <code>ghost</code> and <code>onDark</code> are system additions.</li>
+        <li><b>Fields</b> are 2px radius with the warm taupe border, and gain the sky ring on focus.</li>
+        <li><b>Cards</b> rest at 10px with a hairline and soft shadow; interactive cards lift 3px.</li>
+        <li><b>Stat</b> is the signature device — an oversized sky numeral over a grey caption. Numbers are how this brand proves things.</li>
+      </ul>
+      <p><a href="kitchen-sink.html">See every component in every state →</a></p>
+    </section>
+
+    <hr>
+
+    <section id="templates">
+      <h2>Templates</h2>
+      <p>Eleven starting points in <a href="../templates">templates/</a>. Each folder is self-contained — open its entry file, replace the content, ship.</p>
+      <table class="tbl">
+        <tr><th>Kind</th><th>Templates</th></tr>
+        <tr><td>Product surfaces</td><td>corporate-website · storefront · docs-site · tutorialkit</td></tr>
+        <tr><td>Decks</td><td>deck · executive-deck · purpose-vision-values</td></tr>
+        <tr><td>Shells &amp; pages</td><td>canvas · patterson-docs · file-manager · corporate-page</td></tr>
+      </table>
+      <p>Templates are <b>not</b> compiled into the bundle and their JSX is loaded directly by the page, so anything in a template can call <code>ReactDOM.createRoot</code> at module scope safely.</p>
+      <p>To copy one into another project, change a single line:</p>
+<pre><code><span class="c">// templates/&lt;slug&gt;/ds-base.js</span>
+<span class="k">const</span> base = <span class="s">'../..'</span>;  <span class="c">// → point at the bound _ds/&lt;folder&gt;</span></code></pre>
+      <p><a href="demos.html">Browse all eleven with descriptions →</a></p>
+    </section>
+
+    <hr>
+
+    <section id="integrations">
+      <h2>Framework adapters</h2>
+      <p>The brand is framework-agnostic. Four adapters are generated from <a href="../theme.json">theme.json</a>, so colours are the exact brand hexes rather than re-derived values.</p>
+      <table class="tbl">
+        <tr><th>File</th><th>Stack</th></tr>
+        <tr><td><a href="../integrations/tailwind.css">tailwind.css</a></td><td>Tailwind v4 CSS-first <code>@theme</code>, plus <code>.pat-btn-*</code> component utilities</td></tr>
+        <tr><td><a href="../integrations/tailwind.config.js">tailwind.config.js</a></td><td>Tailwind v3 / JS preset</td></tr>
+        <tr><td><a href="../integrations/uno.config.js">uno.config.js</a></td><td>UnoCSS theme + brand shortcuts</td></tr>
+        <tr><td><a href="../integrations/shadcn-theme.css">shadcn-theme.css</a></td><td>shadcn/ui semantic variables, light + navy-ground dark</td></tr>
+        <tr><td><a href="../integrations/theme-ui.js">theme-ui.js</a></td><td>Theme UI theme with variants</td></tr>
+      </table>
+      <div class="note">Editing tokens? Change <code>tokens/*.css</code> and <code>theme.json</code> <b>together</b> — the adapters are generated from the JSON, and drift between them is the one way this system goes wrong quietly.</div>
+    </section>
+
+    <hr>
+
+    <section id="rules">
+      <h2>Brand rules</h2>
+      <h3>Do</h3>
+      <ul>
+        <li>Anchor pages on white. White plus space is the brand; navy and sky are punctuation.</li>
+        <li>Set every heading navy, with no letter-spacing.</li>
+        <li>Keep primary-button hover inside navy — <code>#003767</code> → <code>#315D83</code>.</li>
+        <li>Use small radii on controls: 5px buttons, 2px fields, 10px cards.</li>
+        <li>Show the 3px sky focus ring on everything focusable.</li>
+        <li>Render statistics at full size — proof, not decoration.</li>
+        <li>Use warm, authentic photography of practitioners, animals and operations.</li>
+      </ul>
+      <h3>Don't</h3>
+      <ul>
+        <li>Don't introduce a second typeface.</li>
+        <li>Don't use gradients, textures or pattern fills — the production stylesheet contains <b>zero</b> gradient declarations. The wave watermark is the only decorative mark.</li>
+        <li>Don't build glassmorphic panels or blurred backdrops beyond a sticky header.</li>
+        <li>Don't use emoji or unicode glyphs, ever.</li>
+        <li>Don't scrim photography with black — the scrim is navy at ~55%.</li>
+        <li>Don't add bounce, spring, parallax or decorative animation.</li>
+        <li>Don't crowd corporate or marketing surfaces. Density is permitted on storefront catalogues and app shells only.</li>
+      </ul>
+      <h3>Voice</h3>
+      <p><b>"We"</b> for Patterson, <b>"you / your"</b> for the customer, partnership-framed. Verb-first CTAs — "Explore solutions", "Create my account" — never "Click here". Numbers as proof. Title Case only for product and programme brands.</p>
+      <p>Questions <i>are</i> allowed as headings; the live sites lead with "Need technical service or equipment repair?" Keep them short and answer them immediately.</p>
+    </section>
+
+    <hr>
+
+    <section id="gotchas">
+      <h2>Gotchas</h2>
+      <p>Twelve claims that look right and aren't. Each was checked against the production theme stylesheet.</p>
+      <table class="tbl">
+        <tr><th>Assumption</th><th>Reality</th></tr>
+        <tr><td>Everything is a pill</td><td>Buttons 5px, fields 2px — no pill radius exists in production</td></tr>
+        <tr><td>Primary hovers to sky</td><td><code>#315D83</code>, a lighter navy</td></tr>
+        <tr><td>Secondary is a navy outline</td><td>A filled <code>#6DCFF6</code> with a navy label</td></tr>
+        <tr><td>Headlines are 700 throughout</td><td>800 at h1/h2, then 400 from h3 down</td></tr>
+        <tr><td>Body is 16px at 1.6</td><td>18px at 24px line-height (1.33)</td></tr>
+        <tr><td>Display is tracked tight</td><td>No letter-spacing in the stylesheet at all</td></tr>
+        <tr><td>Eyebrows are uppercase sky</td><td>Navy, 14px, weight 500, sentence case</td></tr>
+        <tr><td>All greys are cool</td><td><code>#AFA593</code> is a warm taupe, used on field borders</td></tr>
+        <tr><td>Shadows are navy-tinted</td><td>Production uses neutral black at 4–12% alpha</td></tr>
+        <tr><td>Buttons are 44px tall</td><td>≈50px — 15px/30px padding on a 20px line-box</td></tr>
+        <tr><td>Icons are single-colour strokes</td><td>Spot illustrations are navy+sky two-tone; UI glyphs come from a font</td></tr>
+        <tr><td>Weights 300–900 are available</td><td>Only 400 and 700 are licensed faces</td></tr>
+      </table>
+      <p>The system keeps a handful of deliberate divergences from production — the pill token, navy-tinted shadows, the sky focus ring, the 44px floor. They are labelled <span class="tag tag-s">S</span> throughout <a href="../DESIGN.md">DESIGN.md</a>, and the focus ring in particular is a real accessibility gain over production, which ships none.</p>
+    </section>
+
+    <hr>
+
+    <section id="contrib">
+      <h2>Contributing</h2>
+      <h3>Adding a token</h3>
+      <ul>
+        <li>Add it to the right file in <a href="../tokens">tokens/</a>.</li>
+        <li>Mirror it in <a href="../theme.json">theme.json</a>.</li>
+        <li>If the compiler can't infer its kind, annotate: <code>--my-token: 4px; /* @kind spacing */</code></li>
+      </ul>
+      <h3>Adding a component</h3>
+      <ul>
+        <li>Write <code>Name.jsx</code> and <code>Name.d.ts</code> side by side in a group folder — the pair is what the compiler looks for.</li>
+        <li>Add it to that group's <code>*.card.html</code> specimen.</li>
+        <li>Inherit the contract: 5px radius, the sky focus ring, a 120–320ms transition, and a 44px minimum target.</li>
+      </ul>
+      <h3>Adding a template</h3>
+      <p>Create <code>templates/&lt;slug&gt;/</code> with a <code>&lt;!-- @template name="…" description="…" --&gt;</code> comment as the first line of the entry file, and a sibling <code>ds-base.js</code>.</p>
+      <p>Run the design-system check after any edit; fix what it reports and run it again until clean.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div style="max-width:320px">
+      <img src="../assets/brand/patterson-logo-white.svg" alt="Patterson">
+      <p style="margin:0">The Patterson Companies design system. Saint Paul, Minnesota — serving oral health and animal health practices since 1877.</p>
+    </div>
+    <div style="display:flex;gap:56px;flex-wrap:wrap">
+      <div class="foot-col"><b>Build</b><a href="#start">Getting started</a><a href="#tokens">Tokens</a><a href="#components">Components</a><a href="#integrations">Integrations</a></div>
+      <div class="foot-col"><b>Explore</b><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="kitchen-sink.html">Kitchen sink</a></div>
+      <div class="foot-col"><b>Reference</b><a href="../DESIGN.md">DESIGN.md</a><a href="../readme.md">readme.md</a><a href="../theme.json">theme.json</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  function sync(){
+    var y=window.scrollY+140,cur=0;
+    secs.forEach(function(s,i){ if(s.offsetTop<=y) cur=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on',i===cur); });
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  sync();
+})();
+</script>
+
+</body>
+</html>

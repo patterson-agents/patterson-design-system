@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patterson Design System</title>
+<link rel="icon" href="../assets/brand/favicon-32x32.png">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="site.css">
+<style>
+.hero{position:relative;overflow:hidden;background:var(--pat-navy);padding:112px 0 104px}
+.hero-wave{position:absolute;inset:0;background:url('../assets/brand/wave-bg-navy.png') right top/cover no-repeat;opacity:.45;pointer-events:none}
+.hero-in{position:relative}
+.hero h1{color:#fff;max-width:900px;margin:18px 0 0}
+.hero .lead{color:#ccd7e1;max-width:600px;margin-top:22px}
+.hero-btns{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:52px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-meta div{font-size:13px;color:#99afc2}
+.hero-meta b{display:block;font-size:15px;color:#fff;font-weight:600;margin-bottom:2px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
+.stat-n{font-size:clamp(40px,4.4vw,58px);line-height:1.05;font-weight:800;color:var(--pat-sky)}
+.stat-l{font-size:14px;line-height:1.5;color:var(--pat-gray);margin-top:6px;max-width:210px}
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle)}
+.sw{height:96px;display:flex;align-items:flex-end;padding:10px 12px;font-family:var(--font-mono);font-size:10px}
+.type-demo{display:flex;flex-direction:column;gap:14px}
+.type-demo .r{display:flex;align-items:baseline;gap:20px;justify-content:space-between;border-bottom:1px solid var(--border-subtle);padding-bottom:12px}
+.type-demo .m{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);white-space:nowrap}
+.shapes{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-end}
+.shape{text-align:center}
+.shape div{width:92px;height:56px;background:var(--pat-sky-10);border:1px solid var(--pat-sky)}
+.shape span{display:block;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:7px}
+.tmpl{display:block;background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow 200ms ease-in-out,transform 200ms ease-in-out}
+.tmpl:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.tmpl .thumb{height:150px;background:var(--pat-navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.tmpl .thumb i{font-size:38px;color:rgba(255,255,255,.5)}
+.tmpl .thumb.lite{background:var(--surface-subtle)}
+.tmpl .thumb.lite i{color:var(--pat-navy-40)}
+.tmpl .meta{padding:20px 22px 22px}
+.tmpl .meta b{display:block;font-size:16px;font-weight:600;color:var(--pat-navy);margin-bottom:5px}
+.tmpl .meta p{margin:0;font-size:14px;line-height:1.55;color:var(--pat-gray)}
+.verify{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.vlist{display:flex;flex-direction:column;gap:0}
+.vrow{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15px;line-height:1.5}
+.vrow .was{color:#8fa6bd;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.32)}
+.vrow .is{color:#fff}
+.vrow .is b{color:var(--pat-blue-light);font-weight:600}
+.icons-strip{display:flex;flex-wrap:wrap;gap:8px}
+.icons-strip i{width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--pat-navy);background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-btn-elevated)}
+@media(max-width:960px){.stats{grid-template-columns:repeat(2,1fr)}.swatches{grid-template-columns:repeat(3,1fr)}.verify{grid-template-columns:1fr;gap:32px}}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr;gap:24px}.vrow{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-l">
+      <a class="nav-logo" href="index.html"><img src="../assets/brand/patterson-logo-navy.svg" alt="Patterson"><span>Design System</span></a>
+      <div class="nav-links">
+        <a href="docs.html">Docs</a>
+        <a href="demos.html">Demos</a>
+        <a href="kitchen-sink.html">Kitchen sink</a>
+        <a href="../DESIGN.md">Spec</a>
+      </div>
+    </div>
+    <div class="nav-r">
+      <span class="nav-ver">v1.0</span>
+      <a class="btn btn-sm btn-primary" href="docs.html#start">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-wave"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow" style="color:var(--pat-blue-light)">Trusted expertise. Unrivaled support.</div>
+    <h1 class="h-display">The design system behind Patterson's oral&nbsp;health and animal&nbsp;health surfaces.</h1>
+    <p class="lead">Every token, component and template verified line-by-line against the live production theme — so what you build here matches what ships.</p>
+    <div class="hero-btns">
+      <a class="btn btn-onnavy" href="docs.html#start">Get started</a>
+      <a class="btn btn-outline" href="demos.html" style="border-color:rgba(255,255,255,.55);color:#fff">Browse demos</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>Proxima Nova</b>Licensed kit bundled</div>
+      <div><b>93 glyphs</b>Official icon font</div>
+      <div><b>4 adapters</b>Tailwind · Uno · shadcn · Theme UI</div>
+      <div><b>Since 1877</b>Saint Paul, Minnesota</div>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stats">
+      <div><div class="stat-n">211</div><p class="stat-l">Design tokens across colour, type, spacing and effects</p></div>
+      <div><div class="stat-n">13</div><p class="stat-l">React components on one global namespace</p></div>
+      <div><div class="stat-n">11</div><p class="stat-l">Templates — product surfaces, decks and app shells</p></div>
+      <div><div class="stat-n">93</div><p class="stat-l">Glyphs in the official Patterson icon font</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-subtle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What's inside</div>
+      <h2 class="h-2">Four ways in.</h2>
+      <p class="body">Link one stylesheet and you have the whole brand. Everything below builds on that.</p>
+    </div>
+    <div class="grid g4">
+      <a class="card card-i" href="docs.html">
+        <i class="pat-i pat-i-document card-ico" aria-hidden="true"></i>
+        <h3 class="h-3">Docs</h3>
+        <p class="body" style="font-size:15px">Install, tokens, components, brand rules and the gotchas that bite.</p>
+      </a>
+      <a class="card card-i" href="demos.html">
+        <i class="pat-i pat-i-grid card-ico" aria-hidden="true"></i>
+        <h3 class="h-3">Demos</h3>
+        <p class="body" style="font-size:15px">All eleven templates — corporate site, storefront, decks, docs, app shells.</p>
+      </a>
+      <a class="card card-i" href="kitchen-sink.html">
+        <i class="pat-i pat-i-list card-ico" aria-hidden="true"></i>
+        <h3 class="h-3">Kitchen sink</h3>
+        <p class="body" style="font-size:15px">Every component in every variant and state, on one page.</p>
+      </a>
+      <a class="card card-i" href="../DESIGN.md">
+        <i class="pat-i pat-i-check card-ico" aria-hidden="true"></i>
+        <h3 class="h-3">The spec</h3>
+        <p class="body" style="font-size:15px">Every rule tagged verified, system convention, or corrected.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Foundations</div>
+      <h2 class="h-2">Navy and sky on generous white.</h2>
+      <p class="body">Navy carries structure, sky carries accent, and white does most of the work. The tertiary set is reserved for charts — it never becomes page chrome.</p>
+    </div>
+
+    <div class="swatches" style="margin-bottom:56px">
+      <div class="sw" style="background:#003767;color:#fff">#003767</div>
+      <div class="sw" style="background:#00A8E1;color:#fff">#00A8E1</div>
+      <div class="sw" style="background:#147EC2;color:#fff">#147EC2</div>
+      <div class="sw" style="background:#6DCFF6;color:#003767">#6DCFF6</div>
+      <div class="sw" style="background:#58585B;color:#fff">#58585B</div>
+      <div class="sw" style="background:#ECECEC;color:#58585B">#ECECEC</div>
+    </div>
+
+    <div class="grid g2" style="gap:56px;align-items:start">
+      <div>
+        <h3 class="h-3" style="margin-bottom:20px">Type — one family, hard weight drop</h3>
+        <div class="type-demo">
+          <div class="r"><span style="font-size:38px;line-height:1.1;font-weight:800;color:var(--pat-navy)">Trusted expertise</span><span class="m">h1 · 800</span></div>
+          <div class="r"><span style="font-size:28px;line-height:1.15;font-weight:800;color:var(--pat-navy)">Unrivaled support</span><span class="m">h2 · 800</span></div>
+          <div class="r"><span style="font-size:22px;line-height:1.2;font-weight:400;color:var(--pat-navy)">We strengthen the people</span><span class="m">h3 · 400</span></div>
+          <div class="r"><span style="font-size:17px;line-height:1.4;color:var(--pat-gray)">Bold solutions and a personal touch.</span><span class="m">body · 400</span></div>
+        </div>
+        <p class="small" style="margin-top:16px">Only <b style="color:var(--pat-navy)">400 and 700</b> are licensed faces. The theme asks for 800 on h1/h2, so production renders synthesized bold.</p>
+      </div>
+      <div>
+        <h3 class="h-3" style="margin-bottom:20px">Shape — restrained, not round</h3>
+        <div class="shapes">
+          <div class="shape"><div style="border-radius:2px"></div><span>field · 2px</span></div>
+          <div class="shape"><div style="border-radius:5px"></div><span>button · 5px</span></div>
+          <div class="shape"><div style="border-radius:10px"></div><span>card · 10px</span></div>
+        </div>
+        <p class="small" style="margin-top:22px">The production stylesheet contains no pill radius anywhere. Buttons are 5px and fields are 2px — the pill token exists, but it is a house convention rather than brand truth.</p>
+        <h3 class="h-3" style="margin:32px 0 14px">Icons — the official font</h3>
+        <div class="icons-strip">
+          <i class="pat-i pat-i-cart"></i><i class="pat-i pat-i-pedigree"></i><i class="pat-i pat-i-prescription"></i>
+          <i class="pat-i pat-i-shipping"></i><i class="pat-i pat-i-hazmat"></i><i class="pat-i pat-i-shiponice"></i>
+          <i class="pat-i pat-i-formulary-list"></i><i class="pat-i pat-i-tag-percentage"></i><i class="pat-i pat-i-locator"></i>
+          <i class="pat-i pat-i-user"></i><i class="pat-i pat-i-gear"></i><i class="pat-i pat-i-search"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-navy">
+  <div class="wrap">
+    <div class="verify">
+      <div>
+        <div class="eyebrow" style="color:var(--pat-blue-light)">Verified, not inferred</div>
+        <h2 class="h-2" style="margin-top:8px">Twelve things everyone gets wrong.</h2>
+        <p class="body" style="margin-top:16px">This system was checked against the production theme stylesheet, the licensed Typekit kit and the real icon font. Several intuitive-seeming rules turned out to be false — they are corrected here and tagged in the spec.</p>
+        <a class="btn btn-onnavy" style="margin-top:28px" href="../DESIGN.md">Read the full spec</a>
+      </div>
+      <div class="vlist">
+        <div class="vrow"><span class="was">Everything is a pill</span><span class="is">Buttons <b>5px</b>, fields <b>2px</b></span></div>
+        <div class="vrow"><span class="was">Primary hovers to sky</span><span class="is">Hovers to <b>#315D83</b>, a lighter navy</span></div>
+        <div class="vrow"><span class="was">Secondary is an outline</span><span class="is">Filled <b>#6DCFF6</b>, navy label</span></div>
+        <div class="vrow"><span class="was">Headlines 700 throughout</span><span class="is">800 at h1/h2, then <b>400</b></span></div>
+        <div class="vrow"><span class="was">Body 16px at 1.6</span><span class="is"><b>18px at 1.33</b></span></div>
+        <div class="vrow"><span class="was">Display is tracked tight</span><span class="is"><b>No letter-spacing</b> anywhere</span></div>
+        <div class="vrow"><span class="was">All greys are cool</span><span class="is"><b>#AFA593</b> — a warm taupe</span></div>
+        <div class="vrow" style="border-bottom:0"><span class="was">Lucide for icons</span><span class="is">The <b>official 93-glyph font</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Templates</div>
+      <h2 class="h-2">Start from something real.</h2>
+      <p class="body">Eleven starting points — recreations of live Patterson surfaces alongside decks and app shells. Copy a folder, replace the content, ship.</p>
+    </div>
+    <div class="grid g3">
+      <a class="tmpl" href="../templates/corporate-website/index.html"><div class="thumb"><i class="pat-i pat-i-house"></i></div><div class="meta"><b>Corporate Website</b><p>pattersoncompanies.com — hero, stats, capability tabs, newsroom.</p></div></a>
+      <a class="tmpl" href="../templates/storefront/index.html"><div class="thumb"><i class="pat-i pat-i-cart"></i></div><div class="meta"><b>Storefront</b><p>E-commerce shell, switchable Dental ↔ Veterinary.</p></div></a>
+      <a class="tmpl" href="../templates/docs-site/index.html"><div class="thumb lite"><i class="pat-i pat-i-document"></i></div><div class="meta"><b>Docs Site</b><p>VitePress-style documentation organised by Diátaxis.</p></div></a>
+      <a class="tmpl" href="../templates/deck/index.html"><div class="thumb"><i class="pat-i pat-i-action-play"></i></div><div class="meta"><b>Presentation Deck</b><p>16:9 company overview — stats, comparison, photo bands.</p></div></a>
+      <a class="tmpl" href="../templates/file-manager/index.html"><div class="thumb lite"><i class="pat-i pat-i-grid"></i></div><div class="meta"><b>Skill Studio</b><p>File-manager app shell — sidebar tree, tabbed panels.</p></div></a>
+      <a class="tmpl" href="demos.html"><div class="thumb lite"><i class="pat-i pat-i-chevron-right"></i></div><div class="meta"><b>All eleven →</b><p>Tutorialkit, executive deck, PVV deck, corporate page, canvas.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="band band-subtle">
+  <div class="wrap">
+    <div class="grid g2" style="gap:56px;align-items:center">
+      <div>
+        <div class="eyebrow">Install</div>
+        <h2 class="h-2" style="margin-top:8px">One stylesheet, one bundle.</h2>
+        <p class="body" style="margin-top:16px">Tokens arrive as CSS custom properties; components arrive on a single global. No build step, no package manager.</p>
+        <a class="btn btn-primary" style="margin-top:26px" href="docs.html#start">Read the docs</a>
+      </div>
+      <div>
+<pre><code><span class="c">&lt;!-- tokens, fonts, icon font --&gt;</span>
+&lt;<span class="k">link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"styles.css"</span>&gt;
+
+<span class="c">&lt;!-- React components --&gt;</span>
+&lt;<span class="k">script</span> src=<span class="s">"_ds_bundle.js"</span>&gt;&lt;/<span class="k">script</span>&gt;
+
+<span class="k">const</span> { Button, Card, Stat, Icon } =
+  window.PattersonCompaniesDesignSystem_3534f9;</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div style="max-width:320px">
+      <img src="../assets/brand/patterson-logo-white.svg" alt="Patterson">
+      <p style="margin:0">The Patterson Companies design system. Saint Paul, Minnesota — serving oral health and animal health practices since 1877.</p>
+    </div>
+    <div style="display:flex;gap:56px;flex-wrap:wrap">
+      <div class="foot-col"><b>Build</b><a href="docs.html#start">Getting started</a><a href="docs.html#tokens">Tokens</a><a href="docs.html#components">Components</a><a href="docs.html#integrations">Integrations</a></div>
+      <div class="foot-col"><b>Explore</b><a href="demos.html">Demos</a><a href="kitchen-sink.html">Kitchen sink</a><a href="../guidelines/brand-icons.card.html">Icon set</a></div>
+      <div class="foot-col"><b>Reference</b><a href="../DESIGN.md">DESIGN.md</a><a href="../readme.md">readme.md</a><a href="../theme.json">theme.json</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

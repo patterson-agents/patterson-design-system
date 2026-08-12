@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demos — Patterson Design System</title>
+<link rel="icon" href="../assets/brand/favicon-32x32.png">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="site.css">
+<style>
+.phead{background:var(--pat-navy);position:relative;overflow:hidden;padding:72px 0 64px}
+.phead .w{position:absolute;inset:0;background:url('../assets/brand/wave-bg-navy.png') right top/cover no-repeat;opacity:.4}
+.phead .in{position:relative}
+.phead h1{color:#fff;margin-top:10px}
+.phead .lead{color:#ccd7e1;margin-top:16px;max-width:640px}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.jump a{font-size:14px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.34);border-radius:999px;padding:8px 16px}
+.jump a:hover{background:rgba(255,255,255,.14);color:#fff}
+.demo{display:grid;grid-template-columns:230px 1fr;gap:0;background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow 200ms ease-in-out}
+.demo:hover{box-shadow:var(--shadow-lg)}
+.demo .art{background:var(--pat-navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:168px}
+.demo .art i{font-size:44px;color:rgba(255,255,255,.55);position:relative}
+.demo .art.lite{background:var(--surface-subtle)}
+.demo .art.lite i{color:var(--pat-navy-40)}
+.demo .art.sky{background:var(--pat-sky-10)}
+.demo .art.sky i{color:var(--pat-sky)}
+.demo .art .wv{position:absolute;inset:0;background:url('../assets/brand/wave-bg-navy.png') center/cover no-repeat;opacity:.4}
+.demo .bd{padding:26px 28px}
+.demo .bd h3{margin-bottom:7px}
+.demo .bd .body{font-size:15px}
+.demo .row{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.demo .path{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.spec{display:block;background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-btn-elevated);padding:16px 18px;transition:border-color 200ms ease-in-out,box-shadow 200ms ease-in-out}
+.spec:hover{border-color:var(--pat-sky);box-shadow:var(--shadow-sm)}
+.spec b{display:block;font-size:15px;font-weight:600;color:var(--pat-navy);margin-bottom:3px}
+.spec span{font-size:13px;line-height:1.5;color:var(--pat-gray)}
+.grp{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin:0 0 14px}
+@media(max-width:760px){.demo{grid-template-columns:1fr}.demo .art{min-height:120px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-l">
+      <a class="nav-logo" href="index.html"><img src="../assets/brand/patterson-logo-navy.svg" alt="Patterson"><span>Design System</span></a>
+      <div class="nav-links"><a href="docs.html">Docs</a><a href="demos.html" aria-current="page">Demos</a><a href="kitchen-sink.html">Kitchen sink</a><a href="../DESIGN.md">Spec</a></div>
+    </div>
+    <div class="nav-r"><span class="nav-ver">v1.0</span><a class="btn btn-sm btn-primary" href="docs.html#start">Get started</a></div>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="w"></div>
+  <div class="wrap in">
+    <div class="eyebrow" style="color:var(--pat-blue-light)">Demos</div>
+    <h1 class="h-1">Everything the system can build.</h1>
+    <p class="lead">Eleven templates and twenty-three specimen cards. The templates are working starting points; the specimens are the reference for a single foundation.</p>
+    <div class="jump">
+      <a href="#surfaces">Product surfaces</a><a href="#decks">Decks</a><a href="#shells">Shells &amp; pages</a><a href="#specimens">Specimens</a>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="surfaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Product surfaces</div>
+      <h2 class="h-2">Recreations of live Patterson properties.</h2>
+      <p class="body">Use these as the starting shell for work on that surface — and as reference for how dense each surface is allowed to be.</p>
+    </div>
+    <div class="stack">
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-house"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Corporate Website</h3>
+          <p class="body">A working recreation of pattersoncompanies.com — navy hero with the wave watermark, four-pillar cards, the We-Are-Patterson statistics band, tabbed capabilities, newsroom and footer. Three linked screens.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/corporate-website/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/corporate-website/README.md">README</a><span class="path">templates/corporate-website</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-cart"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Storefront <span class="tag" style="vertical-align:middle">Dental ↔ Vet</span></h3>
+          <p class="body">The Patterson e-commerce shell on pattern library v5.7.2: navy utility bar, search, category nav with flyouts, hero, featured products, manufacturer rail, Advantage Rewards and account CTA. A single toggle switches the entire surface between Dental and Veterinary branding.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/storefront/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/storefront/README.md">README</a><span class="path">templates/storefront</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art lite"><i class="pat-i pat-i-document"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Docs Site</h3>
+          <p class="body">A VitePress-style documentation site organised by Diátaxis — top nav, sidebar grouped into Tutorials / How-to / Reference / Explanation, article body with all five callout tones, and a prev/next pager. Body copy sits at the 720px readable measure.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/docs-site/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/docs-site/README.md">README</a><span class="path">templates/docs-site</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art sky"><i class="pat-i pat-i-action-play"></i></div>
+        <div class="bd">
+          <h3 class="h-3">TutorialKit Shell <span class="tag tag-s" style="vertical-align:middle">4 themes</span></h3>
+          <p class="body">An interactive-lesson platform — top bar, breadcrumbs, lesson content with every callout, file tree, editor and terminal. Ships <code>theme.css</code>: all 98 <code>--tk-*</code> variables across light, dark navy, dental and veterinary. Drop that one file into any TutorialKit project to brand it.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/tutorialkit/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/tutorialkit/README.md">README</a><span class="path">templates/tutorialkit</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band band-subtle" id="decks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Decks</div>
+      <h2 class="h-2">Print-ready out of the box.</h2>
+      <p class="body">All three run on the same slide stage — keyboard nav, thumbnail rail, speaker notes and one-page-per-slide PDF export, with no extra print CSS.</p>
+    </div>
+    <div class="stack">
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-action-gallery"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Presentation Deck</h3>
+          <p class="body">The 16:9 company overview built on the corporate PowerPoint master — cover panel, section dividers, statistics band, comparison, pull quote, capabilities table, full-bleed photo band and closing. Slide text never drops below 24px.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/deck/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/deck/README.md">README</a><span class="path">templates/deck</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-list"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Executive Deck</h3>
+          <p class="body">An editorial executive briefing: navy cover, key takeaways, breakdown matrix, requirements, build outputs and benefits. Denser and more structured than the company overview — built for a reading audience rather than a presenting one.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/executive-deck/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/executive-deck/README.md">README</a><span class="path">templates/executive-deck</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-people" style="font-size:44px"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Purpose, Vision &amp; Values <span class="tag tag-v" style="vertical-align:middle">Corporate</span></h3>
+          <p class="body">A faithful reversal of the official Purpose·Vision·Values PowerPoint — icon-rail content slides, navy dividers, four-colour values columns, the PVV funnel and a word-cloud closer. The values columns are the one sanctioned use of the tertiary palette outside charts.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/purpose-vision-values/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/purpose-vision-values/README.md">README</a><span class="path">templates/purpose-vision-values</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band" id="shells">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Shells &amp; pages</div>
+      <h2 class="h-2">Scaffolds to build on.</h2>
+      <p class="body">Two are Design Components with live tweak controls; two are plain page shells.</p>
+    </div>
+    <div class="stack">
+
+      <div class="demo">
+        <div class="art sky"><i class="pat-i pat-i-grid"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Canvas <span class="tag tag-s" style="vertical-align:middle">3 tweaks</span></h3>
+          <p class="body">A full corporate page — nav, hero, proof band, capability cards, CTA and footer — wired to three expressive controls. <b>Hero surface</b> reskins the page navy, paper or soft blue; <b>Density</b> moves the whole type and spacing rhythm between editorial and compact; <b>How we prove it</b> swaps the statistics band for a statements band.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/canvas/Canvas.dc.html">Open demo</a><span class="path">templates/canvas</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art lite"><i class="pat-i pat-i-document"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Patterson Docs <span class="tag tag-s" style="vertical-align:middle">Tweakable</span></h3>
+          <p class="body">The documentation shell as a Design Component, with light/dark theme, accent colour and content width exposed as props. Use this when you want a docs surface you can reskin; use <a href="../templates/docs-site/index.html">Docs Site</a> when you want the static VitePress recreation.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/patterson-docs/PattersonDocs.dc.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/patterson-docs/README.md">README</a><span class="path">templates/patterson-docs</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art lite"><i class="pat-i pat-i-toggle-listview"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Skill Studio</h3>
+          <p class="body">A branded file-manager and studio app shell: sidebar file tree, tabbed editor panels, toolbar, reference cards and a composer. The densest template here — a working app surface, and the one place compact 34px controls are allowed.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/file-manager/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/file-manager/README.md">README</a><span class="path">templates/file-manager</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="art"><div class="wv"></div><i class="pat-i pat-i-house"></i></div>
+        <div class="bd">
+          <h3 class="h-3">Corporate Page</h3>
+          <p class="body">The single-page subset of the corporate site — sticky nav, navy hero with the wave watermark, content band and footer, composed from the design system's own components. Reach for it for any one-off marketing page.</p>
+          <div class="row"><a class="btn btn-sm btn-primary" href="../templates/corporate-page/index.html">Open demo</a><a class="btn btn-sm btn-outline" href="../templates/corporate-page/README.md">README</a><span class="path">templates/corporate-page</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band band-subtle" id="specimens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Specimens</div>
+      <h2 class="h-2">One card per foundation.</h2>
+      <p class="body">These are the cards rendered in the Design System tab. Three of them document corrections against the live theme — worth reading before you build.</p>
+    </div>
+
+    <p class="grp">Brand</p>
+    <div class="cardgrid" style="margin-bottom:36px">
+      <a class="spec" href="../guidelines/brand-logo.card.html"><b>Logo</b><span>Lockups, colourways and clear space</span></a>
+      <a class="spec" href="../guidelines/brand-palette.card.html"><b>Palette</b><span>The full brand colour set in one view</span></a>
+      <a class="spec" href="../guidelines/brand-icons.card.html"><b>Icon set</b><span>All 93 glyphs of the official font</span></a>
+      <a class="spec" href="../guidelines/brand-interaction-states.card.html"><b>Interaction states</b><span>Real button states — wrong variants marked ✕</span></a>
+      <a class="spec" href="../guidelines/brand-voice.card.html"><b>Voice</b><span>Tone, person, and verified copy patterns</span></a>
+    </div>
+
+    <p class="grp">Colour</p>
+    <div class="cardgrid" style="margin-bottom:36px">
+      <a class="spec" href="../guidelines/colors-primary.card.html"><b>Primary</b><span>Navy and sky</span></a>
+      <a class="spec" href="../guidelines/colors-secondary.card.html"><b>Secondary</b><span>Blue and blue-light</span></a>
+      <a class="spec" href="../guidelines/colors-tertiary.card.html"><b>Tertiary</b><span>Green, teal, purple — charts only</span></a>
+      <a class="spec" href="../guidelines/colors-tints.card.html"><b>Tints</b><span>Navy and sky ramps</span></a>
+      <a class="spec" href="../guidelines/colors-neutral.card.html"><b>Neutral</b><span>Greys, including the warm taupe</span></a>
+      <a class="spec" href="../guidelines/colors-semantic.card.html"><b>Semantic</b><span>Info, success, warning, danger</span></a>
+    </div>
+
+    <p class="grp">Type</p>
+    <div class="cardgrid" style="margin-bottom:36px">
+      <a class="spec" href="../guidelines/type-family.card.html"><b>Family</b><span>Proxima Nova and its fallbacks</span></a>
+      <a class="spec" href="../guidelines/type-display.card.html"><b>Display</b><span>The large end of the scale</span></a>
+      <a class="spec" href="../guidelines/type-body.card.html"><b>Body</b><span>Running text and measure</span></a>
+      <a class="spec" href="../guidelines/type-weights.card.html"><b>Weights</b><span>Only 400 and 700 are licensed</span></a>
+      <a class="spec" href="../guidelines/type-production-scale.card.html"><b>Production scale</b><span>Exact live-theme sizes and weights</span></a>
+      <a class="spec" href="../guidelines/type-eyebrow-stat.card.html"><b>Eyebrow &amp; stat</b><span>The two signature type devices</span></a>
+    </div>
+
+    <p class="grp">Spacing &amp; components</p>
+    <div class="cardgrid">
+      <a class="spec" href="../guidelines/spacing-scale.card.html"><b>Spacing scale</b><span>The 4px base unit and its steps</span></a>
+      <a class="spec" href="../guidelines/radii.card.html"><b>Corner radii</b><span>Production 5px / 2px vs the system scale</span></a>
+      <a class="spec" href="../guidelines/shadows.card.html"><b>Shadows</b><span>Five navy-tinted elevation steps</span></a>
+      <a class="spec" href="../guidelines/integrations.card.html"><b>Integrations</b><span>The four framework adapters</span></a>
+      <a class="spec" href="../components/core/core.card.html"><b>Core components</b><span>Buttons, badges, stat, card</span></a>
+      <a class="spec" href="../components/forms/forms.card.html"><b>Form components</b><span>Input, select, checkbox, radio, switch</span></a>
+      <a class="spec" href="../components/feedback/feedback.card.html"><b>Feedback</b><span>Alerts and tabs</span></a>
+      <a class="spec" href="../assets/deck/slide-layouts.html"><b>Slide layouts</b><span>Visual index of deck archetypes</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div style="max-width:320px">
+      <img src="../assets/brand/patterson-logo-white.svg" alt="Patterson">
+      <p style="margin:0">The Patterson Companies design system. Saint Paul, Minnesota — serving oral health and animal health practices since 1877.</p>
+    </div>
+    <div style="display:flex;gap:56px;flex-wrap:wrap">
+      <div class="foot-col"><b>Build</b><a href="docs.html#start">Getting started</a><a href="docs.html#tokens">Tokens</a><a href="docs.html#components">Components</a><a href="docs.html#integrations">Integrations</a></div>
+      <div class="foot-col"><b>Explore</b><a href="index.html">Home</a><a href="kitchen-sink.html">Kitchen sink</a><a href="../guidelines/brand-icons.card.html">Icon set</a></div>
+      <div class="foot-col"><b>Reference</b><a href="../DESIGN.md">DESIGN.md</a><a href="../readme.md">readme.md</a><a href="../theme.json">theme.json</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

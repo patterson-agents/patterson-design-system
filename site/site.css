@@ -1,0 +1,103 @@
+/* Patterson design-system site — shared chrome. Pages add their own bits inline. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-sans);color:var(--pat-gray);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--pat-blue);text-decoration:none}
+a:hover{color:var(--pat-navy)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.wrap-text{max-width:760px}
+
+/* --- top nav --- */
+.nav{position:sticky;top:0;z-index:60;height:72px;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--border-subtle)}
+.nav-in{max-width:1240px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.nav-l{display:flex;align-items:center;gap:34px;min-width:0}
+.nav-logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.nav-logo img{height:24px;width:auto;display:block}
+.nav-logo span{font-size:14px;font-weight:600;color:var(--pat-navy);white-space:nowrap}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:15px;font-weight:600;color:var(--pat-navy)}
+.nav-links a:hover{color:var(--pat-sky)}
+.nav-links a[aria-current]{color:var(--pat-sky)}
+.nav-r{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-ver{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+
+/* --- buttons (production geometry: 5px, 15/30) --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:var(--radius-btn);font-family:inherit;font-size:15px;font-weight:600;line-height:20px;padding:15px 30px;cursor:pointer;transition:background-color 200ms ease-in-out,color 200ms ease-in-out}
+.btn-sm{padding:10px 20px;font-size:14px}
+.btn-primary{background:var(--pat-navy);color:#fff}
+.btn-primary:hover{background:var(--pat-primary-hover);color:#fff}
+.btn-secondary{background:var(--pat-blue-light);color:var(--pat-navy)}
+.btn-secondary:hover{background:var(--pat-secondary-hover);color:var(--pat-navy)}
+.btn-onnavy{background:#fff;color:var(--pat-navy)}
+.btn-onnavy:hover{background:var(--pat-blue-light);color:var(--pat-navy)}
+.btn-outline{background:transparent;color:var(--pat-navy);border:2px solid var(--pat-navy);padding:13px 28px}
+.btn-outline:hover{background:var(--pat-navy);color:#fff}
+.btn:focus-visible,a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+
+/* --- type helpers --- */
+.eyebrow{font-size:14px;font-weight:500;line-height:22px;color:var(--pat-sky)}
+.eyebrow-navy{font-size:14px;font-weight:500;line-height:22px;color:var(--pat-navy)}
+h1,h2,h3,h4{color:var(--pat-navy);margin:0;text-wrap:pretty}
+.h-display{font-size:clamp(40px,5.2vw,64px);line-height:1.06;font-weight:800}
+.h-1{font-size:clamp(32px,3.6vw,44px);line-height:1.12;font-weight:800}
+.h-2{font-size:clamp(24px,2.4vw,32px);line-height:1.18;font-weight:800}
+.h-3{font-size:20px;line-height:1.25;font-weight:600}
+.lead{font-size:20px;line-height:1.55;color:var(--pat-gray);margin:0}
+.body{font-size:16px;line-height:1.65;color:var(--pat-gray);margin:0}
+.small{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0}
+.mono{font-family:var(--font-mono);font-size:13px}
+
+/* --- sections --- */
+.band{padding:96px 0}
+.band-tight{padding:64px 0}
+.band-subtle{background:var(--surface-subtle)}
+.band-navy{background:var(--pat-navy);color:#fff}
+.band-navy h1,.band-navy h2,.band-navy h3{color:#fff}
+.band-navy .body,.band-navy .lead{color:#ccd7e1}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head .h-2{margin-top:8px}
+.sec-head .body{margin-top:14px}
+
+/* --- cards --- */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm)}
+.card-i{display:block;transition:box-shadow 200ms ease-in-out,transform 200ms ease-in-out}
+.card-i:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.card .h-3{margin-bottom:8px}
+.card-ico{font-size:26px;color:var(--pat-sky);display:block;margin-bottom:16px}
+
+/* --- code --- */
+pre{margin:0;background:#002745;color:#dbe4ed;border-radius:var(--radius-btn-elevated);padding:18px 20px;overflow-x:auto;font-family:var(--font-mono);font-size:13px;line-height:1.65}
+pre .c{color:#8aa4bd}
+pre .s{color:#6DCFF6}
+pre .k{color:#7BC24D}
+code{font-family:var(--font-mono);font-size:.9em;background:var(--surface-muted);padding:2px 6px;border-radius:3px;color:var(--pat-navy)}
+pre code{background:none;padding:0;color:inherit;font-size:13px}
+
+/* --- table --- */
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);padding:0 14px 10px 0;border-bottom:1px solid var(--border-subtle)}
+.tbl td{padding:13px 14px 13px 0;border-bottom:1px solid var(--border-subtle);vertical-align:top;color:var(--pat-gray)}
+.tbl td:first-child{color:var(--pat-navy);font-weight:600;white-space:nowrap}
+
+/* --- tags --- */
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:var(--pat-navy-10);color:var(--pat-navy)}
+.tag-v{background:#e5f2f1;color:var(--pat-teal)}
+.tag-s{background:var(--pat-sky-10);color:#0a6c94}
+.tag-c{background:var(--pat-warning-bg);color:#8a5a00}
+
+/* --- footer --- */
+.foot{background:var(--pat-navy);color:#ccd7e1;padding:56px 0;font-size:14px;line-height:1.6}
+.foot-in{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap}
+.foot a{color:#ccd7e1}
+.foot a:hover{color:#fff}
+.foot-col{display:flex;flex-direction:column;gap:9px}
+.foot-col b{color:#fff;font-weight:600;margin-bottom:2px}
+.foot img{height:22px;width:auto;margin-bottom:14px}
+
+@media(max-width:960px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.band{padding:64px 0}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}.wrap{padding:0 20px}.nav-in{padding:0 20px}}
