@@ -63,9 +63,15 @@ jobs:
             cp -r "$item/." "dist/$item/"
           done
 
-          for f in _ds_bundle.js _ds_manifest.json support.js styles.css theme.json; do
+          for f in _ds_bundle.js _ds_manifest.json support.js styles.css theme.json DESIGN.md readme.upstream.md; do
             cp "$f" "dist/$f"
           done
+
+          # The legacy site/*.html nav links ../DESIGN.md, ../readme.md and
+          # ../integrations/* - keep those reachable too.
+          cp readme.upstream.md dist/readme.md
+          mkdir -p dist/integrations
+          cp -r integrations/. dist/integrations/
 
           # Build/dev artifacts from the Astro project dir have no place in
           # the passthrough copy of site/ — dist/ would otherwise nest the
