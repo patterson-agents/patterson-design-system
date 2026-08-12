@@ -2,8 +2,11 @@
    Patterson Companies — Icon Font (OFFICIAL)
    ------------------------------------------------------------
    The real Patterson icon set, extracted from the production
-   storefront pattern library (icons.woff / .ttf / .svg — 84 glyphs,
+   storefront pattern library (icons.woff / .ttf / .svg — 93 glyphs,
    1024 units-per-em, ascent 960 / descent -64, PUA range U+E900+).
+   (An earlier version of this header said 84; the 93 selectors
+   below and the tracked SVG font glyphs match 1:1 by name — see
+   ../assets/icons/README.md.)
 
    This REPLACES Lucide as the system's UI-glyph tier. Icons are a
    FONT, so they inherit `color` and `font-size` from their context —
@@ -15,6 +18,18 @@
    Always pair a glyph with a text label or an aria-label; the glyph
    itself is in a private-use codepoint and reads as nothing to a
    screen reader.
+
+   VECTOR SOURCE OF TRUTH: ../assets/icons/*.svg — one standalone SVG
+   per glyph (93/93), generated from the already-tracked
+   ../assets/fonts/patterson-icons.svg (an IcoMoon SVG font — text,
+   not binary). Use those SVGs directly wherever a font glyph isn't
+   appropriate (server-rendered contexts without the @font-face,
+   places needing per-glyph fill color without loading the font,
+   icon-picker UIs, etc). The .woff/.ttf binaries below are NOT
+   committed to this repo (license unconfirmed — same open question
+   as proxima-nova); see ../assets/icons/README.md for hashes, the
+   downloads/ source path, and the one-line vendoring command for
+   once licensing clears.
    ============================================================ */
 
 @font-face {

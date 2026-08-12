@@ -1,0 +1,560 @@
+[
+  {
+    "glyph": "alert",
+    "file": "alert.svg",
+    "unicode": "U+E900",
+    "advX": 1024
+  },
+  {
+    "glyph": "arrow-down",
+    "file": "arrow-down.svg",
+    "unicode": "U+E901",
+    "advX": 1024
+  },
+  {
+    "glyph": "arrow-left",
+    "file": "arrow-left.svg",
+    "unicode": "U+E902",
+    "advX": 1024
+  },
+  {
+    "glyph": "arrow-right",
+    "file": "arrow-right.svg",
+    "unicode": "U+E903",
+    "advX": 1024
+  },
+  {
+    "glyph": "arrow-up",
+    "file": "arrow-up.svg",
+    "unicode": "U+E904",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-down",
+    "file": "chevron-down.svg",
+    "unicode": "U+E905",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-left",
+    "file": "chevron-left.svg",
+    "unicode": "U+E906",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-right",
+    "file": "chevron-right.svg",
+    "unicode": "U+E907",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-up",
+    "file": "chevron-up.svg",
+    "unicode": "U+E908",
+    "advX": 1024
+  },
+  {
+    "glyph": "facebook",
+    "file": "facebook.svg",
+    "unicode": "U+E909",
+    "advX": 1024
+  },
+  {
+    "glyph": "filter",
+    "file": "filter.svg",
+    "unicode": "U+E90A",
+    "advX": 1024
+  },
+  {
+    "glyph": "help",
+    "file": "help.svg",
+    "unicode": "U+E90B",
+    "advX": 1024
+  },
+  {
+    "glyph": "house",
+    "file": "house.svg",
+    "unicode": "U+E90C",
+    "advX": 1024
+  },
+  {
+    "glyph": "instagram",
+    "file": "instagram.svg",
+    "unicode": "U+E90D",
+    "advX": 1024
+  },
+  {
+    "glyph": "linkedin",
+    "file": "linkedin.svg",
+    "unicode": "U+E90E",
+    "advX": 1024
+  },
+  {
+    "glyph": "menu-dots",
+    "file": "menu-dots.svg",
+    "unicode": "U+E90F",
+    "advX": 1024
+  },
+  {
+    "glyph": "menu-lines",
+    "file": "menu-lines.svg",
+    "unicode": "U+E910",
+    "advX": 1024
+  },
+  {
+    "glyph": "pause",
+    "file": "pause.svg",
+    "unicode": "U+E911",
+    "advX": 1024
+  },
+  {
+    "glyph": "play",
+    "file": "play.svg",
+    "unicode": "U+E912",
+    "advX": 1024
+  },
+  {
+    "glyph": "reddit",
+    "file": "reddit.svg",
+    "unicode": "U+E913",
+    "advX": 1024
+  },
+  {
+    "glyph": "remove",
+    "file": "remove.svg",
+    "unicode": "U+E914",
+    "advX": 1024
+  },
+  {
+    "glyph": "search",
+    "file": "search.svg",
+    "unicode": "U+E915",
+    "advX": 1024
+  },
+  {
+    "glyph": "snapchat",
+    "file": "snapchat.svg",
+    "unicode": "U+E916",
+    "advX": 1024
+  },
+  {
+    "glyph": "twitter",
+    "file": "twitter.svg",
+    "unicode": "U+E917",
+    "advX": 1024
+  },
+  {
+    "glyph": "youtube",
+    "file": "youtube.svg",
+    "unicode": "U+E918",
+    "advX": 1024
+  },
+  {
+    "glyph": "check",
+    "file": "check.svg",
+    "unicode": "U+E919",
+    "advX": 1024
+  },
+  {
+    "glyph": "mail",
+    "file": "mail.svg",
+    "unicode": "U+E91A",
+    "advX": 1418
+  },
+  {
+    "glyph": "list",
+    "file": "list.svg",
+    "unicode": "U+E91B",
+    "advX": 1024
+  },
+  {
+    "glyph": "user",
+    "file": "user.svg",
+    "unicode": "U+E91C",
+    "advX": 1024
+  },
+  {
+    "glyph": "grid",
+    "file": "grid.svg",
+    "unicode": "U+E91D",
+    "advX": 1024
+  },
+  {
+    "glyph": "question-mark",
+    "file": "question-mark.svg",
+    "unicode": "U+E91E",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-up_light",
+    "file": "chevron-up-light.svg",
+    "unicode": "U+E91F",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-right_light",
+    "file": "chevron-right-light.svg",
+    "unicode": "U+E920",
+    "advX": 1024
+  },
+  {
+    "glyph": "external-link",
+    "file": "external-link.svg",
+    "unicode": "U+E921",
+    "advX": 1024
+  },
+  {
+    "glyph": "user_alt",
+    "file": "user-alt.svg",
+    "unicode": "U+E922",
+    "advX": 977
+  },
+  {
+    "glyph": "linkedin_filled",
+    "file": "linkedin-filled.svg",
+    "unicode": "U+E923",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-left_light",
+    "file": "chevron-left-light.svg",
+    "unicode": "U+E924",
+    "advX": 1024
+  },
+  {
+    "glyph": "chevron-down_light",
+    "file": "chevron-down-light.svg",
+    "unicode": "U+E925",
+    "advX": 1024
+  },
+  {
+    "glyph": "document",
+    "file": "document.svg",
+    "unicode": "U+E926",
+    "advX": 1205
+  },
+  {
+    "glyph": "speech-bubbles",
+    "file": "speech-bubbles.svg",
+    "unicode": "U+E927",
+    "advX": 914
+  },
+  {
+    "glyph": "close",
+    "file": "close.svg",
+    "unicode": "U+E928",
+    "advX": 1024
+  },
+  {
+    "glyph": "close_light",
+    "file": "close-light.svg",
+    "unicode": "U+E929",
+    "advX": 1024
+  },
+  {
+    "glyph": "map-pin_alt_outline",
+    "file": "map-pin-alt-outline.svg",
+    "unicode": "U+E92A",
+    "advX": 1004
+  },
+  {
+    "glyph": "search_alt",
+    "file": "search-alt.svg",
+    "unicode": "U+E92B",
+    "advX": 1024
+  },
+  {
+    "glyph": "menu-lines_thin",
+    "file": "menu-lines-thin.svg",
+    "unicode": "U+E92C",
+    "advX": 1024
+  },
+  {
+    "glyph": "down-caret",
+    "file": "down-caret.svg",
+    "unicode": "U+E92D",
+    "advX": 1024
+  },
+  {
+    "glyph": "download",
+    "file": "download.svg",
+    "unicode": "U+E92E",
+    "advX": 1024
+  },
+  {
+    "glyph": "down-right-arrow",
+    "file": "down-right-arrow.svg",
+    "unicode": "U+E92F",
+    "advX": 1024
+  },
+  {
+    "glyph": "email",
+    "file": "email.svg",
+    "unicode": "U+E930",
+    "advX": 1024
+  },
+  {
+    "glyph": "excel",
+    "file": "excel.svg",
+    "unicode": "U+E931",
+    "advX": 1024
+  },
+  {
+    "glyph": "formulary-list",
+    "file": "formulary-list.svg",
+    "unicode": "U+E932",
+    "advX": 1024
+  },
+  {
+    "glyph": "gear",
+    "file": "gear.svg",
+    "unicode": "U+E933",
+    "advX": 1024
+  },
+  {
+    "glyph": "hazmat",
+    "file": "hazmat.svg",
+    "unicode": "U+E934",
+    "advX": 1024
+  },
+  {
+    "glyph": "locator",
+    "file": "locator.svg",
+    "unicode": "U+E935",
+    "advX": 1024
+  },
+  {
+    "glyph": "cart",
+    "file": "cart.svg",
+    "unicode": "U+E936",
+    "advX": 1024
+  },
+  {
+    "glyph": "close_medium",
+    "file": "close-medium.svg",
+    "unicode": "U+E937",
+    "advX": 1024
+  },
+  {
+    "glyph": "trash",
+    "file": "trash.svg",
+    "unicode": "U+E938",
+    "advX": 878
+  },
+  {
+    "glyph": "collapse",
+    "file": "collapse.svg",
+    "unicode": "U+E939",
+    "advX": 1024
+  },
+  {
+    "glyph": "expand",
+    "file": "expand.svg",
+    "unicode": "U+E93A",
+    "advX": 916
+  },
+  {
+    "glyph": "list-1",
+    "file": "list-1.svg",
+    "unicode": "U+E93D",
+    "advX": 1024
+  },
+  {
+    "glyph": "chat_alt",
+    "file": "chat-alt.svg",
+    "unicode": "U+E93E",
+    "advX": 1024
+  },
+  {
+    "glyph": "pdf",
+    "file": "pdf.svg",
+    "unicode": "U+E940",
+    "advX": 1024
+  },
+  {
+    "glyph": "pedigree",
+    "file": "pedigree.svg",
+    "unicode": "U+E941",
+    "advX": 1024
+  },
+  {
+    "glyph": "phone",
+    "file": "phone.svg",
+    "unicode": "U+E943",
+    "advX": 1024
+  },
+  {
+    "glyph": "prescription",
+    "file": "prescription.svg",
+    "unicode": "U+E944",
+    "advX": 1024
+  },
+  {
+    "glyph": "previouslypurchased",
+    "file": "previouslypurchased.svg",
+    "unicode": "U+E945",
+    "advX": 1024
+  },
+  {
+    "glyph": "promotion",
+    "file": "promotion.svg",
+    "unicode": "U+E946",
+    "advX": 1024
+  },
+  {
+    "glyph": "shiponice",
+    "file": "shiponice.svg",
+    "unicode": "U+E952",
+    "advX": 1024
+  },
+  {
+    "glyph": "upload",
+    "file": "upload.svg",
+    "unicode": "U+E95F",
+    "advX": 1024
+  },
+  {
+    "glyph": "toggle-gridview",
+    "file": "toggle-gridview.svg",
+    "unicode": "U+E962",
+    "advX": 1024
+  },
+  {
+    "glyph": "toggle-listview",
+    "file": "toggle-listview.svg",
+    "unicode": "U+E963",
+    "advX": 1024
+  },
+  {
+    "glyph": "up-caret",
+    "file": "up-caret.svg",
+    "unicode": "U+E967",
+    "advX": 1024
+  },
+  {
+    "glyph": "action-play",
+    "file": "action-play.svg",
+    "unicode": "U+E968",
+    "advX": 1024
+  },
+  {
+    "glyph": "check_alt",
+    "file": "check-alt.svg",
+    "unicode": "U+E969",
+    "advX": 1024
+  },
+  {
+    "glyph": "facebook_alt_bold",
+    "file": "facebook-alt-bold.svg",
+    "unicode": "U+E96D",
+    "advX": 1024
+  },
+  {
+    "glyph": "info",
+    "file": "info.svg",
+    "unicode": "U+E96E",
+    "advX": 1024
+  },
+  {
+    "glyph": "plus_circle",
+    "file": "plus-circle.svg",
+    "unicode": "U+E96F",
+    "advX": 1024
+  },
+  {
+    "glyph": "map-pin",
+    "file": "map-pin.svg",
+    "unicode": "U+E971",
+    "advX": 1024
+  },
+  {
+    "glyph": "locked",
+    "file": "locked.svg",
+    "unicode": "U+E972",
+    "advX": 832
+  },
+  {
+    "glyph": "tag-percentage",
+    "file": "tag-percentage.svg",
+    "unicode": "U+E973",
+    "advX": 1024
+  },
+  {
+    "glyph": "tag-price",
+    "file": "tag-price.svg",
+    "unicode": "U+E974",
+    "advX": 1024
+  },
+  {
+    "glyph": "user_bold",
+    "file": "user-bold.svg",
+    "unicode": "U+E975",
+    "advX": 1024
+  },
+  {
+    "glyph": "facebook_alt",
+    "file": "facebook-alt.svg",
+    "unicode": "U+E977",
+    "advX": 1024
+  },
+  {
+    "glyph": "youtube_alt",
+    "file": "youtube-alt.svg",
+    "unicode": "U+E978",
+    "advX": 1024
+  },
+  {
+    "glyph": "instagram_alt",
+    "file": "instagram-alt.svg",
+    "unicode": "U+E979",
+    "advX": 1024
+  },
+  {
+    "glyph": "pinterest",
+    "file": "pinterest.svg",
+    "unicode": "U+E97B",
+    "advX": 1024
+  },
+  {
+    "glyph": "pinterest_alt",
+    "file": "pinterest-alt.svg",
+    "unicode": "U+E97C",
+    "advX": 1024
+  },
+  {
+    "glyph": "instagram_outline",
+    "file": "instagram-outline.svg",
+    "unicode": "U+E97D",
+    "advX": 1028
+  },
+  {
+    "glyph": "twitter_alt",
+    "file": "twitter-alt.svg",
+    "unicode": "U+E97E",
+    "advX": 1024
+  },
+  {
+    "glyph": "action-gallery",
+    "file": "action-gallery.svg",
+    "unicode": "U+E97F",
+    "advX": 1024
+  },
+  {
+    "glyph": "action-lightbox",
+    "file": "action-lightbox.svg",
+    "unicode": "U+E980",
+    "advX": 1024
+  },
+  {
+    "glyph": "chat",
+    "file": "chat.svg",
+    "unicode": "U+E981",
+    "advX": 1024
+  },
+  {
+    "glyph": "shipping",
+    "file": "shipping.svg",
+    "unicode": "U+E98E",
+    "advX": 1024
+  }
+]
