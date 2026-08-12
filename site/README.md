@@ -1,33 +1,110 @@
-# Site
+# Patterson Starlight site
 
-The design system's own front end — a landing page, documentation, a demo gallery and a
-kitchen sink. Plain HTML: link [`../styles.css`](../styles.css) and, where components are
-rendered, [`../_ds_bundle.js`](../_ds_bundle.js). No build step.
+A Patterson Companies branded [Starlight](https://starlight.astro.build) documentation
+site. Astro 7.1.5 and Starlight 0.41.5, pinned exactly and install-verified.
 
-| File | What it is |
-| --- | --- |
-| [`index.html`](index.html) | Landing page — what the system is, foundations at a glance, the twelve corrections, template gallery. |
-| [`docs.html`](docs.html) | Documentation — install, tokens, colour, type, shape, icons, components, templates, adapters, brand rules, gotchas, contributing. |
-| [`demos.html`](demos.html) | Every template with a description and a link, plus all twenty-three specimen cards. |
-| [`kitchen-sink.html`](kitchen-sink.html) | Every component in every variant and state, rendered live from the bundle. Logic in [`kitchen-sink.jsx`](kitchen-sink.jsx). |
-| [`site.css`](site.css) | Shared chrome — nav, footer, buttons, cards, code blocks, tables. |
+> [!NOTE]
+> This directory also carries the design system's **legacy static pages**
+> (`index.html`, `docs.html`, `demos.html`, `kitchen-sink.html`, `kitchen-sink.jsx`,
+> `site.css`) as plain passthrough files, alongside the Astro project. They are not part
+> of the Astro build — the deploy workflow composes them into the published site
+> unchanged, at `/site/*.html`, so their relative links up to `../_ds_bundle.js` and
+> `../styles.css` keep working. See [`README.legacy.md`](README.legacy.md) for their own
+> conventions.
 
-## Conventions
+## Scaffold
 
-The site is built with the same rules it documents, so it doubles as a reference
-implementation: 5px buttons, navy headings with no letter-spacing, the official icon font,
-the wave watermark as the only decorative mark, and no gradients anywhere.
+```sh
+bun create patterson-starlight my-docs
+cd my-docs
+bun run dev
+```
 
-`site.css` deliberately uses plain classes rather than the React components — the pages need
-to work as static HTML, and the chrome is not part of the system's public surface. Anything
-that *is* part of the public surface (every component in the kitchen sink) is rendered from
-the real bundle, so a regression there shows up on the page.
+`bun create` copies this directory into the target, runs `bun install`, and initializes
+a git repository there. Three caveats, verified against Bun 1.3:
 
-## Editing
+- **Point it at a new directory.** `bun create` does not refuse an existing one — it
+  replaces the contents, without a prompt. A file already sitting in the target is
+  gone afterward.
+- **The `name` field is rewritten** to the target directory name, so the scaffolded
+  project is `my-docs`, not `patterson-starlight-site`. Everything else is copied
+  verbatim, `.gitignore` included.
+- **The template is resolved from `~/.bun-create/patterson-starlight`.** If that copy
+  is missing, `bun create` falls back to looking the name up on npm, where it does not
+  exist. Register it once with
+  `cp -R <plugin>/ds/templates/starlight ~/.bun-create/patterson-starlight`.
 
-- Adding a component? Add a `<Sec>` to `kitchen-sink.jsx` and a sidebar link in
-  `kitchen-sink.html`.
-- Adding a template? Add a `.demo` block to `demos.html` and a row to the table in
-  `docs.html#templates`.
-- Changing a brand rule? It appears in three places — [`../DESIGN.md`](../DESIGN.md),
-  `docs.html` and the landing page's corrections list. `DESIGN.md` is the source of truth.
+If you would rather not register anything, copy the folder directly:
+
+```sh
+cp -R "${CLAUDE_PLUGIN_ROOT}/ds/templates/starlight" my-docs
+cd my-docs
+bun install
+bun run dev
+```
+
+## Scripts
+
+| Script | What it does |
+|---|---|
+| `bun run dev` | Dev server on `http://localhost:4321` |
+| `bun run build` | Static build to `dist/` |
+| `bun run preview` | Serves the built `dist/` locally |
+
+There is deliberately no `start` script. `bun create` executes a template's `start`
+script when one exists, and a dev server that never exits would hang the scaffold.
+
+## Customization points
+
+| What | Where |
+|---|---|
+| Site title, description, tagline | `astro.config.mjs`, inside `starlight({ … })` |
+| Deployed origin and sub-path | `astro.config.mjs`, the commented `site` and `base` fields |
+| Sidebar sections | `astro.config.mjs`, `sidebar` — `guides/` and `reference/` autogenerate |
+| Brand theme | `src/styles/patterson.css`, the only brand file |
+| Logos | `src/assets/` for the hero, `public/` for the nav and favicon |
+| Pages | `src/content/docs/`, folders drive the sidebar |
+
+## The accent and contrast policy
+
+Sky `#00A8E1` is the brand's signature color and the easiest one to misuse. White text
+on sky fails WCAG contrast, and so does sky text on white.
+
+- On a **light** canvas, navy `#003767` carries strong text and link blue `#147EC2`
+  carries links. Sky appears only as non-text chrome, such as the header hairline and
+  the focus ring.
+- On a **dark** canvas, sky and its lighter tints carry the accent, text included.
+
+Primary button hover on light is a lighter navy `#315D83`, never sky. Everything is
+sentence case, with no uppercase transforms, and there is no emoji anywhere.
+
+## The font policy
+
+Proxima Nova is served by Adobe Fonts kit `uth1qfm`, linked from the `head` entry in
+`astro.config.mjs`. Adobe's terms do not permit re-hosting Typekit payloads, so this
+template ships no font binaries and no `@font-face` declarations. Arial is the
+sanctioned substitute when the kit is unreachable.
+
+## Dependencies
+
+`astro@7.1.5` and `@astrojs/starlight@0.41.5`, pinned without a caret, are the only two
+direct dependencies. Adding one to this template means supply-chain scoring it first.
+
+### About sharp
+
+`astro@7.1.5` declares `sharp` as an **optional** dependency, and package managers
+install optional dependencies by default — so `sharp@0.35.3` does appear in `bun.lock`
+and in `node_modules` after `bun install`. It is never loaded. `astro.config.mjs`
+configures `passthroughImageService()`, which copies images through untouched instead of
+invoking sharp, and the build log confirms it: images come out byte-for-byte the size
+they went in.
+
+This is a deliberate, documented position, not an oversight. Do not add `sharp` as a
+direct dependency, and do not swap the image service back to the default. If you need
+resizing or format conversion, pre-process the assets before committing them.
+
+**Do not reach for `bun install --omit=optional` to drop it.** That flag does remove
+`sharp`, but it also removes Rolldown's native binding, which Astro 7 needs to bundle —
+the build then fails with `Cannot find native binding`. Verified on Bun 1.3.14. Leaving
+the optional dependencies installed and the image service on passthrough is the working
+configuration.

@@ -1,0 +1,17 @@
+{
+  "name": "site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Patterson-branded Starlight documentation site.",
+  "scripts": {
+    "generate": "bun run ../scripts/build-site-content.ts",
+    "dev": "bun run generate && astro dev",
+    "build": "bun run generate && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.41.5",
+    "astro": "7.1.5"
+  }
+}
