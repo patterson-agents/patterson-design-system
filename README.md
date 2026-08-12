@@ -10,7 +10,7 @@
 The claude.ai/design authoring project for Patterson's brand-accurate design system —
 tokens, components, guidelines, integrations, and templates.
 
-![tokens](https://img.shields.io/badge/tokens-6_stylesheets-0065FF?labelColor=001B34)
+![tokens](https://img.shields.io/badge/tokens-7_stylesheets-0065FF?labelColor=001B34)
 ![components](https://img.shields.io/badge/components-3_categories-055ABD?labelColor=001B34)
 ![templates](https://img.shields.io/badge/templates-11-7BFF1B?labelColor=001B34)
 ![fonts](https://img.shields.io/badge/fonts-excluded_pending_license-58585B?labelColor=001B34)
