@@ -10,8 +10,8 @@ paths are not resolvable from outside this repo.
 - **Favicons** — Patterson **Veterinary** set (`favicon-16x16.png`, `favicon-32x32.png`,
   `apple-touch-icon-180x180.png`, `android-chrome-192x192.png`, `safari-pinned-tab.svg`).
   The square navy mark; correct for small formats.
-- **Imagery** — `wave-bg-navy.png` (the wave watermark, the brand's only decorative mark),
-  `photo-markets.png`, `value-prop.png`, `color-palette.png` (the brand-guide palette page
+- **Imagery** — `wave-bg-navy.webp` (the wave watermark, the brand's only decorative mark),
+  `photo-markets.webp`, `value-prop.webp`, `color-palette.webp` (the brand-guide palette page
   the color tokens derive from).
 
 ## [`fonts/`](fonts)

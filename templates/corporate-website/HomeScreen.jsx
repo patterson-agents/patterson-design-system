@@ -29,7 +29,7 @@ function HomeScreen({ onNavigate }) {
       {/* HERO */}
       <section style={{ background: 'var(--pat-navy)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
         {/* Wave watermark — the brand's only decorative mark. Production uses NO gradients. */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('../../assets/brand/wave-bg-navy.png')", backgroundSize: 'cover', backgroundPosition: 'right top', opacity: 0.5 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('../../assets/brand/wave-bg-navy.webp')", backgroundSize: 'cover', backgroundPosition: 'right top', opacity: 0.5 }} />
         <div className="pat-container" style={{ position: 'relative', paddingTop: 'var(--space-11)', paddingBottom: 'var(--space-11)', maxWidth: 900 }}>
           <div className="pat-eyebrow" style={{ color: 'var(--pat-sky)' }}>Trusted Expertise · Unrivaled Support</div>
           <h1 style={{ color: '#fff', fontSize: 'var(--fs-display)', margin: '14px 0 18px', maxWidth: '14ch', lineHeight: 1.04 }}>

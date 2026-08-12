@@ -36,6 +36,6 @@ Fonts + colors from the DS via `ds-base.js` (loads `styles.css`). proxima-nova
 (Typekit) → Figtree fallback. Navy #003767 / Sky #00A8E1 / Gray #58585B — confirmed
 exact against the official PDCO PowerPoint theme.
 Real assets used: official Patterson lockup `patterson-logo-white/navy.svg`,
-`wave-bg-navy.png` (navy wave-watermark bg on cover/section/quote/closing) and
-`photo-markets.png` (full-bleed 4-market photo band on the Personal Touch slide).
-Also available: `value-prop.png` (Trusted Expertise / Unrivaled Support chevron).
+`wave-bg-navy.webp` (navy wave-watermark bg on cover/section/quote/closing) and
+`photo-markets.webp` (full-bleed 4-market photo band on the Personal Touch slide).
+Also available: `value-prop.webp` (Trusted Expertise / Unrivaled Support chevron).

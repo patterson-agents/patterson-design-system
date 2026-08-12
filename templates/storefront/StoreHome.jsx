@@ -12,7 +12,7 @@ function StoreHome({ brand, onAdd }) {
       {/* HERO */}
       <section style={{ background: 'var(--pat-navy)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
         {/* Wave watermark — production uses NO gradients. */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('../../assets/brand/wave-bg-navy.png')", backgroundSize: 'cover', backgroundPosition: 'right top', opacity: 0.5 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('../../assets/brand/wave-bg-navy.webp')", backgroundSize: 'cover', backgroundPosition: 'right top', opacity: 0.5 }} />
         <div className="pat-container" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 'var(--space-8)', alignItems: 'center', paddingTop: 'var(--space-9)', paddingBottom: 'var(--space-9)' }}>
           <div>
             <div className="pat-eyebrow" style={{ color: 'var(--pat-sky)' }}>{brand.heroEyebrow}</div>

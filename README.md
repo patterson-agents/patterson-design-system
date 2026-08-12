@@ -92,9 +92,9 @@ content before substitution — dimensions changed, the images did not):
 
 | File | Before | After |
 |---|---|---|
-| `assets/brand/photo-markets.png` | 2880×980, 5.9 MB | 1600×544, 465 KB |
-| `assets/brand/value-prop.png` | 2754×1000, 2.6 MB | 1600×581, 240 KB |
-| `assets/brand/wave-bg-navy.png` | 3840×2160, 357 KB | 1920×1080, 6.7 KB |
+| `assets/brand/photo-markets.webp` | 2880×980, 5.9 MB | 1600×544, 465 KB |
+| `assets/brand/value-prop.webp` | 2754×1000, 2.6 MB | 1600×581, 240 KB |
+| `assets/brand/wave-bg-navy.webp` | 3840×2160, 357 KB | 1920×1080, 6.7 KB |
 
 No other PNG in the committed tree exceeds 500 KB (`assets/brand/deck/bg-cover-panel.png` is the
 next-largest at 484 KB and was left as-is).

@@ -636,7 +636,7 @@ Sparing. `--overlay-scrim` (navy @55%) over photography; `--blur-panel` (`satura
 The rule: **interactive → pill; container → 10px; field → 6px.** No interactive element is ever square-cornered.
 
 ### Photography & Imagery
-Warm, authentic, natural-light photography of practitioners at work, animals, and distribution operations. Real people, real practices — never abstract stock, never 3D render, never illustration. When text must sit on an image, apply the navy scrim at ~55% rather than darkening the photo or adding a gradient. Available brand imagery in [`assets/brand/`](assets/brand): `photo-markets.png`, `value-prop.png`, `wave-bg-navy.png` (the wave watermark).
+Warm, authentic, natural-light photography of practitioners at work, animals, and distribution operations. Real people, real practices — never abstract stock, never 3D render, never illustration. When text must sit on an image, apply the navy scrim at ~55% rather than darkening the photo or adding a gradient. Available brand imagery in [`assets/brand/`](assets/brand): `photo-markets.webp`, `value-prop.webp`, `wave-bg-navy.webp` (the wave watermark).
 
 ### Iconography
 **Line icons, 2px stroke, rounded caps and joins, 16–24px, colored via `currentColor`.** No filled icons, no duotone, no gradient icons. **No emoji and no unicode glyph substitutes** — off-brand for a clinical B2B company, without exception.
@@ -693,7 +693,7 @@ Buttons are **confident, never tiny** — 44px is the default height and the min
 
 ### Bands
 
-**`hero-band-navy`** — Full-bleed navy band, `{typography.display}` white headline, `{typography.lead}` sub-line, button row using `{component.button-on-navy}`. Often carries the `wave-bg-navy.png` watermark at low contrast.
+**`hero-band-navy`** — Full-bleed navy band, `{typography.display}` white headline, `{typography.lead}` sub-line, button row using `{component.button-on-navy}`. Often carries the `wave-bg-navy.webp` watermark at low contrast.
 
 **`hero-band-photo`** — Full-bleed photography with the navy scrim at 55%, white display headline over it.
 

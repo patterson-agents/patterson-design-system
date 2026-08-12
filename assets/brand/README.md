@@ -18,10 +18,10 @@ Patterson **Veterinary** set (source manifest name `PVcom`): `favicon-16x16.png`
 
 ## Imagery
 
-- `wave-bg-navy.png` — the wave watermark. **The brand's only decorative mark.** Production
+- `wave-bg-navy.webp` — the wave watermark. **The brand's only decorative mark.** Production
   uses no gradients, textures or patterns, so this is what fills an empty navy band.
-- `photo-markets.png`, `value-prop.png` — brand photography from the official PowerPoint.
-- `color-palette.png` — the brand-guide palette page the color tokens derive from.
+- `photo-markets.webp`, `value-prop.webp` — brand photography from the official PowerPoint.
+- `color-palette.webp` — the brand-guide palette page the color tokens derive from.
 
 Photography direction: warm, authentic, natural-light — practitioners, animals, operations.
 Never abstract stock, never 3D render, never illustration. When text must sit on an image, use

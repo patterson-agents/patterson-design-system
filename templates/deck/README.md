@@ -7,7 +7,7 @@ per slide inside `<deck-stage>`.
 ## Slides
 
 Cover · section divider · stats band · comparison · quote · capabilities table · full-bleed
-photo band · closing. The wave watermark ([`wave-bg-navy.png`](../../assets/brand)) sits
+photo band · closing. The wave watermark ([`wave-bg-navy.webp`](../../assets/brand)) sits
 behind navy slides at low contrast.
 
 ## Editing
