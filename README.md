@@ -34,6 +34,7 @@ tokens, components, guidelines, integrations, and templates.
 
 ## Table of contents
 
+- [Live site](#live-site)
 - [What this is](#what-this-is)
 - [Screenshots](#screenshots)
 - [Provenance](#provenance)
@@ -42,6 +43,13 @@ tokens, components, guidelines, integrations, and templates.
 - [Substitutions made on import](#substitutions-made-on-import)
 - [Brand asset re-encode (2026-08-12)](#brand-asset-re-encode-2026-08-12)
 - [Canonicity](#canonicity)
+
+## Live site
+
+**[ds.patterson.sh](https://ds.patterson.sh)** — authoring project: tokens, components,
+guidelines, and templates for the Patterson Companies design system.
+
+<img src="docs/screenshots/site-home.webp" width="100%" alt="patterson-design-system documentation site home page">
 
 ## What this is
 
