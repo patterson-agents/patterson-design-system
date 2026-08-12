@@ -21,13 +21,68 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install site dependencies
+        working-directory: site
+        run: bun install --frozen-lockfile
+
+      - name: Generate content (tokens, icons, components, specimens)
+        working-directory: site
+        run: bun run generate
+
+      - name: Build the Starlight site
+        working-directory: site
+        run: bun run build
+
+      - name: Compose the Pages artifact
+        run: |
+          set -euo pipefail
+
+          # The Starlight build (site/dist) is the root of the published
+          # site. Everything else is a live passthrough copy at its current
+          # repo-root path, so /site/*.html (the legacy static kitchen sink)
+          # and /guidelines/*.card.html keep resolving exactly as they do in
+          # the repo. node_modules is never part of a copy.
+          #
+          # `assets/`, `components/`, and `tokens/` collide at the top level
+          # with directories the Starlight build already produced there
+          # (docs pages) — copying "src/." into an existing "dst/" MERGES
+          # the two; copying bare "src" into an existing "dst" NESTS it
+          # instead ("dst/src"), which is the bug this trailing-dot form
+          # avoids. Verified locally against every href/src in the composed
+          # tree before this workflow was written.
+          mkdir -p dist
+          cp -r site/dist/. dist/
+
+          for item in guidelines templates tokens components assets site docs; do
+            mkdir -p "dist/$item"
+            cp -r "$item/." "dist/$item/"
+          done
+
+          for f in _ds_bundle.js _ds_manifest.json support.js styles.css theme.json; do
+            cp "$f" "dist/$f"
+          done
+
+          # Build/dev artifacts from the Astro project dir have no place in
+          # the passthrough copy of site/ — dist/ would otherwise nest the
+          # entire build a second time under /site/dist/.
+          rm -rf dist/site/node_modules dist/site/dist dist/site/.astro
+
+          echo "Composed artifact:"
+          du -sh dist
+          find dist -maxdepth 1 | sort
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist'
 
   deploy:
     needs: build
