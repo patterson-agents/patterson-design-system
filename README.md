@@ -85,7 +85,7 @@ collided with this file's name on import and was renamed rather than overwritten
 | `components/` | `core/`, `feedback/`, `forms/` — each component ships a `.jsx`, `.d.ts`, and a `.prompt.md` |
 | `guidelines/` | Brand reference cards (`.card.html`) — logo, icons, palette, type, interaction states |
 | `integrations/` | Tailwind, UnoCSS, shadcn, theme-ui adapters |
-| `templates/` | 11 page/deck/site scaffolds: canvas, corporate-page, corporate-website, deck, docs-site, executive-deck, file-manager, patterson-docs, purpose-vision-values, storefront, tutorialkit |
+| `templates/` | 10 page/deck/site scaffolds: canvas, corporate-page, corporate-website, deck, docs-site, executive-deck, file-manager, patterson-docs, purpose-vision-values, storefront |
 | `site/` | The design system's own documentation/demo site |
 | `assets/brand/` | Logos, favicons, photography, deck imagery |
 | `styles.css`, `theme.json` | Compiled stylesheet and theme manifest |
